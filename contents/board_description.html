@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
@@ -6,21 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TUNIS board description &mdash; TUNIS Board 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/lense-platforms.css?v=64eb0f87" />
       <link rel="stylesheet" type="text/css" href="../_static/css/links.css?v=7a4609b2" />
       <link rel="stylesheet" type="text/css" href="https://iogs-lense.github.io/lense.tech/assets/css/fontawesome/css/all.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=2709fde1"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -51,12 +49,9 @@
               <p class="caption" role="heading"><span class="caption-text">Board description</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">     Description</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#signal-processing">Signal processing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#inputs">Inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#outputs">Outputs</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#signal-processing">Signal processing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dc-motor-position-control">DC Motor position control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pinout-of-the-nucleo-board">Pinout of the Nucleo board</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#connection-to-the-motor">Connection to the motor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#power-supplies">Power supplies</a></li>
 </ul>
@@ -97,43 +92,129 @@
 <h2>Signal processing<a class="headerlink" href="#signal-processing" title="Link to this heading"></a></h2>
 <p>In this section, the <strong>signal processing</strong> part of the board will be described.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/TUNIS_board_analog.png"><img alt="TUNIS board - Analog inputs and outputs" src="../_images/TUNIS_board_analog.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="../_images/TUNIS_board_analog.png"><img alt="TUNIS board - Analog inputs and outputs" src="../_images/TUNIS_board_analog.png" style="width: 90%;" />
+</a>
 <figcaption>
 <p><span class="caption-text">TUNIS board - Analog inputs and outputs</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<section id="inputs">
-<h3>Inputs<a class="headerlink" href="#inputs" title="Link to this heading"></a></h3>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Analog and digital inputs of a STM32 microcontroller (included on the Nucleo board) operate on voltages between <strong>0 and 3.3V</strong>. Otherwise inputs can lead to severe damages.</p>
 </div>
-</section>
-<section id="outputs">
-<h3>Outputs<a class="headerlink" href="#outputs" title="Link to this heading"></a></h3>
-</section>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Pinout of the TUNIS Board</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 22.2%" />
+<col style="width: 33.3%" />
+<col style="width: 22.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Label</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Pinout on Nucleo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Analog Input 1</p></td>
+<td><p>E1 / EA0</p></td>
+<td><p>Analog or Digital Input</p></td>
+<td><p>PA_0 / A0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Analog Input 2</p></td>
+<td><p>E2 / EA1</p></td>
+<td><p>Analog or Digital Input</p></td>
+<td><p>PA_1 / A1</p></td>
+</tr>
+<tr class="row-even"><td><p>Analog Output 1</p></td>
+<td><p>S1 / DAC1</p></td>
+<td><p>Analog or Digital Output</p></td>
+<td><p>PA_4 / A2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Analog Output 2</p></td>
+<td><p>S2 / DAC2</p></td>
+<td><p>Analog or Digital Output</p></td>
+<td><p>PA_5 / D13</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When the analog output S2 is in use, <strong>LED1</strong> on the Nucleo board becomes unavailable (it is also connected to D13 or PA_5).</p>
+</div>
+<p>All other pins on the Nucleo board remain available for your application and can be connected directly to the Arduino or Morpho connectors.</p>
 </section>
 <section id="dc-motor-position-control">
 <h2>DC Motor position control<a class="headerlink" href="#dc-motor-position-control" title="Link to this heading"></a></h2>
 <p>In this section, the <strong>DC motor position control</strong> part of the board will be described.</p>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../_images/TUNIS_board_DC_motor.png"><img alt="TUNIS board - DC motor connector" src="../_images/TUNIS_board_DC_motor.png" style="width: 90%;" /></a>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../_images/TUNIS_board_DC_motor.png"><img alt="TUNIS board - DC motor connector" src="../_images/TUNIS_board_DC_motor.png" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-text">TUNIS board - DC motor connector</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-text">TUNIS board - DC motor connector</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<section id="pinout-of-the-nucleo-board">
+<h3>Pinout of the Nucleo board<a class="headerlink" href="#pinout-of-the-nucleo-board" title="Link to this heading"></a></h3>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Pinout of the TUNIS Board</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 22.2%" />
+<col style="width: 22.2%" />
+<col style="width: 33.3%" />
+<col style="width: 22.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Label</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Pinout on Nucleo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PWM 1</p></td>
+<td><p>PWM 1</p></td>
+<td><p>Digital Output</p></td>
+<td><p>PB_6 / D10</p></td>
+</tr>
+<tr class="row-odd"><td><p>PWM 2</p></td>
+<td><p>PWM 2</p></td>
+<td><p>Digital Output</p></td>
+<td><p>PC_7 / D9</p></td>
+</tr>
+<tr class="row-even"><td><p>Motor Error (Driver)</p></td>
+<td><p>EF</p></td>
+<td><p>Digital Input</p></td>
+<td><p>PA_7 / D11</p></td>
+</tr>
+<tr class="row-odd"><td><p>Encoder Channel A</p></td>
+<td><p>SA</p></td>
+<td><p>Digital Input</p></td>
+<td><p>PB_8 / D15</p></td>
+</tr>
+<tr class="row-even"><td><p>Encoder Channel B</p></td>
+<td><p>SB</p></td>
+<td><p>Digital Input</p></td>
+<td><p>PB_9 / D14</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="connection-to-the-motor">
 <h3>Connection to the motor<a class="headerlink" href="#connection-to-the-motor" title="Link to this heading"></a></h3>
 <p>During labworks, <strong>Pololu</strong> DC motor (<em>3239</em> or <em>4843</em>) are used.  This gearmotor consists of a <strong>12 V</strong> brushed DC motor combined with a 20.4:1 metal gearbox. A 48 CPR quadrature encoder is integrated on the motor shaft. It provides 979.62 counts per revolution of the gearbox’s output shaft.</p>
 <p>More documentation is available at the <a class="reference external" href="https://www.pololu.com/">Pololu website</a> : <a class="reference external" href="https://www.pololu.com/product/3239">POL3239</a> or <a class="reference external" href="https://www.pololu.com/product/4843">POL4843</a></p>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/pololu_connector.jpg"><img alt="Pololu DC motor connector - From pololu.com" src="../_images/pololu_connector.jpg" style="width: 90%;" /></a>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../_images/pololu_connector.jpg"><img alt="Pololu DC motor connector - From pololu.com" src="../_images/pololu_connector.jpg" style="width: 90%;" />
+</a>
 <figcaption>
-<p><span class="caption-text">Pololu DC motor connector - From pololu.com</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-text">Pololu DC motor connector - From pololu.com</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Pololu DC motor connector - From pololu.com</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Pololu DC motor connector - From pololu.com</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
 <col style="width: 60.0%" />
