@@ -131,8 +131,13 @@ The next part of the program controls the position of the DC motor depending on 
 
 Connect the S1 (error signal of the controller) and S2 (ouput signal of the controller) outputs to an oscilloscope.
 
-IMAGE ??
 
+.. figure:: ../_static/DC_motor_signals.png
+   :alt: TUNIS board - DC motor control in position - signals
+   :align: center
+   :width: 90%
+   
+   TUNIS board - DC motor control in position - signals
 
 
 Code explanation

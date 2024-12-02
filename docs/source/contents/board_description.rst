@@ -13,16 +13,38 @@ In this section, the **signal processing** part of the board will be described.
    
    TUNIS board - Analog inputs and outputs
 
-Inputs
-~~~~~~
-
-.. caution::
+.. warning::
    Analog and digital inputs of a STM32 microcontroller (included on the Nucleo board) operate on voltages between **0 and 3.3V**. Otherwise inputs can lead to severe damages.
 
-Outputs
-~~~~~~~
+.. flat-table:: Pinout of the TUNIS Board
+   :widths: 20 20 30 20
+   :header-rows: 1
 
+   * - Function
+     - Label
+     - Type
+     - Pinout on Nucleo
+   * - Analog Input 1
+     - E1 / EA0
+     - Analog or Digital Input 
+     - PA_0 / A0 
+   * - Analog Input 2
+     - E2 / EA1
+     - Analog or Digital Input
+     - PA_1 / A1 
+   * - Analog Output 1
+     - S1 / DAC1
+     - Analog or Digital Output
+     - PA_4 / A2
+   * - Analog Output 2
+     - S2 / DAC2
+     - Analog or Digital Output
+     - PA_5 / D13
+	 
+.. warning::
+   When the analog output S2 is in use, **LED1** on the Nucleo board becomes unavailable (it is also connected to D13 or PA_5).
 
+All other pins on the Nucleo board remain available for your application and can be connected directly to the Arduino or Morpho connectors.
 
 
 DC Motor position control
@@ -37,6 +59,37 @@ In this section, the **DC motor position control** part of the board will be des
    
    TUNIS board - DC motor connector
 
+Pinout of the Nucleo board
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. flat-table:: Pinout of the TUNIS Board
+   :widths: 20 20 30 20
+   :header-rows: 1
+
+   * - Function
+     - Label
+     - Type
+     - Pinout on Nucleo
+   * - PWM 1
+     - PWM 1
+     - Digital Output 
+     - PB_6 / D10
+   * - PWM 2
+     - PWM 2
+     - Digital Output 
+     - PC_7 / D9
+   * - Motor Error (Driver)
+     - EF
+     - Digital Input 
+     - PA_7 / D11
+   * - Encoder Channel A
+     - SA
+     - Digital Input 
+     - PB_8 / D15
+   * - Encoder Channel B
+     - SB
+     - Digital Input 
+     - PB_9 / D14
 
 Connection to the motor
 ~~~~~~~~~~~~~~~~~~~~~~~
